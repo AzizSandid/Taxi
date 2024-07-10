@@ -87,7 +87,7 @@ export default function Contact() {
   return (
     <main  id="Contact" className="flex flex-col overflow-x-hidden min-h-[100vh] gap-10 items-center">
       <CustomHeader title="Contacts" />
-      <div className="flex gap-4 flex-col md:flex-row">
+      <div className="flex w-full gap-4 flex-col md:flex-row">
         {cards.map((card, index) => (
           <div
             key={index}
