@@ -5,7 +5,7 @@ export const covered_By_Your_Grace = Covered_By_Your_Grace({
   weight: ["400"],
 });
 interface SectionTitleProps {
-  subtitle: string;
+  subtitle?: string;
   title: string;
   align?: "center" | "start";
 }
@@ -25,7 +25,7 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
         {subtitle}
       </h2>
       <h1
-        className="text-black font-black sm:font-extrabold text-4xl sm:text-5xl"
+        className="text-black font-black sm:font-extrabold text-2xl sm:text-4xl md:text-5xl"
         dangerouslySetInnerHTML={{ __html: title }}
       />
     </div>

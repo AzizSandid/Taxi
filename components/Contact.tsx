@@ -86,26 +86,25 @@ export default function Contact() {
   };
   return (
     <main  id="Contact" className="flex flex-col overflow-x-hidden min-h-[100vh] gap-10 items-center">
-      <CustomHeader title="Contactez Nous" />
-      <div className="flex gap-4 ">
+      <CustomHeader title="Contacts" />
+      <div className="flex gap-4 flex-col md:flex-row">
         {cards.map((card, index) => (
           <div
             key={index}
-            className="flex flex-col min-w-fit px-4 lg:px-10 py-6 gap-4 text-center lg:text-start bg-primary  text-white rounded-xl hover:bg-primary/70 transition"
+            className="flex flex-col min-w-fit px-4 lg:px-10 py-6 gap-4 text-center lg:text-start bg-primary  text-white rounded-xl hover:bg-primary/65 transition"
           >
-            <h2 className={`text-3xl`}>
+            <h2 className={`text-xl xl:text-3xl`}>
               {card.title}
             </h2>
             <p
-              className="min-w-[260px] leading-8 font-medium w-full"
+              className="w-[200px] xl:w-[260px] text-base leading-8 font-medium w-full"
               dangerouslySetInnerHTML={{ __html: card.value }}
             />
           </div>
         ))}
       </div>
-      <div className="w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12  bg-light rounded-2xl overflow-hidden">
-        <div className="flex flex-row gap-8">
-          <div className="hidden lg:flex w-1/2 overflow-hidden">
+      <div className="flex flex-row bg-[#FFF8EB] gap-8 w-full rounded-2xl overflow-hidden justify-center">
+          <div className="hidden lg:flex lg:w-1/3 overflow-hidden">
             <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d819.6986018334908!2d10.0909257!3d34.7355763!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12ffb271f167d319%3A0xa178a63179ad6dde!2zVGF4aSDYp9mE2LnYp9mK2YTYqQ!5e0!3m2!1sen!2stn!4v1720397257506!5m2!1sen!2stn" 
                 width="800" 
@@ -116,13 +115,12 @@ export default function Contact() {
           </div>
           <form
             onSubmit={handleSubmit}
-            className="flex flex-col justify-center p-8 gap-8 w-full"
+            className="flex flex-col justify-center p-8 gap-8 w-full lg:w-2/3 "
           >
-            <SectionTitle
+          <SectionTitle
               title="Écrire un message"
-              subtitle="Contactez Nous"
               align="start"
-            />
+          />
             <div className="flex flex-col gap-4">
               <div className="flex flex-col sm:flex-row gap-4">
                 <CustomInput
@@ -153,7 +151,6 @@ export default function Contact() {
               />
             </div>
           </form>
-        </div>
       </div>
     </main>
   );
