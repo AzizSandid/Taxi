@@ -25,7 +25,7 @@ export default function Navbar() {
     { title: "Accueil", route: "/" },
     { title: "Homme", route: "/homme" },
     { title: "Femme", route: "/femme" },
-    { title: "Contact", route: "#Contact" },
+    { title: "Contact", route: "/#Contact" },
   ];
 
   return (
@@ -43,7 +43,7 @@ export default function Navbar() {
             <div className="relative" key={link.title}>
               <Link
                 href={link.route}
-                className={`text-${pathname === link.route ? 'black' : 'gray-500'} font-medium app-transition truncate text-lg`}
+                className={`${pathname === link.route ? 'text-black' : 'text-gray-500'} font-medium app-transition truncate text-lg`}
               >
                 {link.title}
               </Link>
