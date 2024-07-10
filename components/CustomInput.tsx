@@ -18,7 +18,7 @@ const CustomInput = (props: CustomFormInputProps) => {
     <div className="flex flex-col gap-1 w-full">
       {type === "textarea" ? (
         <textarea
-          className={`w-full p-4 outline-none rounded-xl border-black/30 border focus:ring-primary focus:ring-2 transition-all duration-150 ${className} placeholder:text-sm`}
+          className={`w-full p-4 outline-none rounded-xl  focus:ring-primary focus:ring-2 transition-all duration-150 ${className} placeholder:text-sm`}
           name={name}
           value={value}
           onChange={onChange as React.ChangeEventHandler<HTMLTextAreaElement>}
@@ -26,7 +26,7 @@ const CustomInput = (props: CustomFormInputProps) => {
         />
       ) : type === "select" ? (
         <select
-          className={`w-full p-4 outline-none border-black/30 border rounded-xl focus:ring-primary focus:ring-2 transition-all duration-150 ${className} placeholder:text-sm`}
+          className={`w-full p-4 outline-none  rounded-xl focus:ring-primary focus:ring-2 transition-all duration-150 ${className} placeholder:text-sm`}
           name={name}
           value={value}
           onChange={onChange as React.ChangeEventHandler<HTMLSelectElement>}
@@ -42,7 +42,7 @@ const CustomInput = (props: CustomFormInputProps) => {
         </select>
       ) : type === "date" ? (
         <input
-          className={`w-full p-4 outline-none border-black/30 border rounded-xl focus:ring-primary focus:ring-2 transition-all duration-150 ${className} placeholder:text-sm`}
+          className={`w-full p-4 outline-none  rounded-xl focus:ring-primary focus:ring-2 transition-all duration-150 ${className} placeholder:text-sm`}
           name={name}
           value={value}
           onChange={onChange as React.ChangeEventHandler<HTMLInputElement>}
@@ -58,7 +58,7 @@ const CustomInput = (props: CustomFormInputProps) => {
         />
       ) : (
         <input
-          className={`w-full p-4 outline-none border-black/30 border rounded-xl focus:ring-primary focus:ring-2 transition-all duration-150 ${className} placeholder:text-sm`}
+          className={`w-full p-4 outline-none rounded-xl focus:ring-primary focus:ring-2 transition-all duration-150 ${className} placeholder:text-sm`}
           type={type}
           name={name}
           value={value}
