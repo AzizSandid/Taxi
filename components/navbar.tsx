@@ -30,13 +30,13 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed w-full z-50 px-8 py-4 flex h-20 transition-all duration-300 ease-in-out justify-between items-center ${
+      className={`fixed w-11/12 z-50 py-4 flex h-20 transition-all duration-300 ease-in-out justify-between items-center  ${
         isScrolled ? "bg-black bg-opacity-20 shadow-lg" : "bg-transparent"
       }`}
     >
       <div className="flex justify-between gap-12">
         <Link href="/">
-          <img src="/logo/logo.png" alt="Taxi العائلة Logo" className="h-20 w-48" />
+          <img src="/logo/logo.png" alt="Taxi العائلة Logo" className="h-20 w-40" />
         </Link>
         <div className="hidden lg:flex items-center space-x-10">
           {navigationLinks.map((link) => (
