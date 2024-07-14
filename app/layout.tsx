@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
   <html lang="en">
     <body
-      className={`${poppins.className} bg-white overflow-x-hidden relative z-0 flex flex-col items-center `}
+      className={`${poppins.className} bg-white overflow-x-hidden relative z-0 flex flex-col `}
     >
       <ToastContainer
         position="bottom-right"
