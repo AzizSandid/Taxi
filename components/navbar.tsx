@@ -30,7 +30,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed w-11/12 z-50 py-4 flex h-20 transition-all duration-300 ease-in-out justify-between items-center  ${
+      className={`fixed w-full z-50 px-9 py-4 flex h-20 transition-all duration-300 ease-in-out justify-between items-center  ${
         isScrolled ? "bg-black bg-opacity-20 shadow-lg" : "bg-transparent"
       }`}
     >
