@@ -30,7 +30,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed w-full z-50 px-9 py-4 flex h-20 transition-all duration-300 ease-in-out justify-between items-center  ${
+      className={`fixed max-w-[1500px] w-full z-50 px-9 py-4 flex h-20 transition-all duration-300 ease-in-out justify-between items-center  ${
         isScrolled ? "bg-black bg-opacity-20 shadow-lg" : "bg-transparent"
       }`}
     >
@@ -43,7 +43,7 @@ export default function Navbar() {
             <div className="relative" key={link.title}>
               <Link
                 href={link.route}
-                className={`${pathname === link.route ? 'text-black' : 'text-gray-500'} font-medium app-transition truncate text-lg`}
+                className={`${pathname === link.route ? 'text-black' :  isScrolled ?'text-white':'text-gray-500'} font-medium app-transition truncate text-lg`}
               >
                 {link.title}
               </Link>
