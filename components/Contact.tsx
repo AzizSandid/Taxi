@@ -1,11 +1,12 @@
 "use client";
-import CustomButton from "@/components/CustomButton";
-import CustomHeader from "@/components/CustomHeader";
-import CustomInput from "@/components/CustomInput";
-import SectionTitle from "@/components/SectionTitle";
 import axios from "axios";
 import { useState } from "react";
 import { toast } from "react-toastify";
+import CustomHeader from "./CustomHeader";
+import SectionTitle from "./SectionTitle";
+import CustomInput from "./CustomInput";
+import CustomButton from "./CustomButton";
+
 
 const cards = [
   {

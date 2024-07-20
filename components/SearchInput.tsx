@@ -1,7 +1,5 @@
+import { Search } from '@/public/icon';
 import React, { useState } from 'react';
-import CustomInput from './CustomInput';
-import Search from '@/public/icon/search';
-
 interface SearchInputProps {
   onSearch: (searchTerm: string) => void;
 }
@@ -19,7 +17,7 @@ const SearchInput: React.FC<SearchInputProps> = ({ onSearch }) => {
   };
 
   return (
-    <view className='flex outline-none rounded-xl bg-white'>
+    <view className='flex outline-none rounded-xl bg-white max-w-[500px]'>
         <input
           className={`w-full placeholder:text-sm p-4  outline-none rounded-xl`}
           name="searchTerm"

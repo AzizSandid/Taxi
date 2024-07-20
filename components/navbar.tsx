@@ -1,8 +1,9 @@
 "use client";
 import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
-import { Menu, ShoppingBag, ShoppingBasket, ShoppingCart, X , } from "lucide-react";
+import { Menu, ShoppingCart, X  } from "lucide-react";
 import { usePathname } from 'next/navigation';
+
 
 export default function Navbar() {
   const [toggle, setToggle] = useState(false);
@@ -43,7 +44,7 @@ export default function Navbar() {
             <div className="relative" key={link.title}>
               <Link
                 href={link.route}
-                className={`${pathname === link.route ? 'text-black' :  isScrolled ?'text-white':'text-gray-500'} font-medium app-transition truncate text-lg`}
+                className={`${pathname === link.route ? 'text-black' :  isScrolled ?'text-white':'text-gray'} font-medium app-transition truncate text-lg`}
               >
                 {link.title}
               </Link>
