@@ -31,3 +31,31 @@ body {
     text-wrap: balance;
   }
 }
+/* Add this to your global CSS file */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Custom scrollbar styles */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px; /* width of vertical scrollbar */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Track color */
+  border-radius: 4px; /* Handle corners */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #888; /* Handle color */
+  border-radius: 4px; /* Handle corners */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Handle color on hover */
+}

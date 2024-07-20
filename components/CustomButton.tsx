@@ -33,7 +33,7 @@ export default function CustomButton({
       <button
         onClick={onclick}
         type="submit"
-        className={`${bgColor} w-fit flex items-center justify-center px-4 lg:px-8 py-4 rounded-xl font-bold sm:text-lg text-center truncate`}
+        className={`${bgColor} w-fit flex items-center justify-center px-4 lg:px-8 py-4 rounded-xl font-bold text-sm sm:text-lg text-center truncate`}
       >
         <span>{label}</span>
         {Icon && <Icon className="hidden lg:block ml-2"/>}

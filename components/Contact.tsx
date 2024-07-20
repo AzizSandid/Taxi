@@ -15,13 +15,12 @@ const cards = [
   },
   {
     title: "Contact",
-    value: `+216 99 999 999 <br/>
-    +216 55 444 222 <br/>
+    value: `+216 53 071 084<br/>
     email@gmail.com`,
   },
   {
     title: "Adresse",
-    value: "Bir Ali Ben Khlifa,3040<br/> Sfax",
+    value: "Sfax, route manzel <br/>chaker km3,en face Mg",
   },
 ];
 

@@ -1,8 +1,8 @@
-'use client'
-import { Card, Contact, CustomButton, CustomHeader, IconDisplay, SearchInput } from "@/components";
+"use client";
+import { Card, Contact, CustomButton, CustomHeader, FeedBackCard, IconDisplay, ScrollIndicator, SearchInput } from "@/components";
 import { Arrow, Article, Commande, Phone } from "@/public/icon";
 import Image from "next/image";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 export default function Home() {
 
@@ -33,8 +33,35 @@ export default function Home() {
       subTitle: "Des réponses à toute demande commerciale 24/7."
     }
   ];
+  const FeedbackList = [
+    {
+      name: "John Doe",
+      subtitle: "Youtuber",
+      content: "Nous proposons de nombreux types de produits différents avec de variations dans chaque catégorie.",
+      note:"4.5"
+    },
+    {
+      name: "Aziz",
+      subtitle: "Youtuber",
+      content: "Nous proposons de nombreux types de produits différents avec de variations dans chaque catégorie.Nous proposons de nombreux types de produits différents avec de variations dans chaque catégorie.Nous proposons de nombreux types de produits différents avec de variations dans chaque catégorie.Nous proposons de nombreux types de produits différents avec de variations dans chaque catégorie.Nous proposons de nombreux types de produits différents avec de variations dans chaque catégorie.Nous proposons de nombreux types de produits différents avec de variations dans chaque catégorie.",
+      note:"4"
+    },    {
+      name: "Yassine",
+      subtitle: "Youtuber",
+      content: "Nous proposons de nombreux types de produits différents avec de variations dans chaque catégorie.",
+      note:"3.5"
+    },    {
+      name: "John Doe",
+      subtitle: "Youtuber",
+      content: "Nous proposons de nombreux types de produits différents avec de variations dans chaque catégorie.",
+      note:"4.5"
+    },
+    
+  ];
+  const scrollContainerRef = useRef<HTMLDivElement | null>(null);
+
   return (
-    <main className="flex min-h-[3520px] flex-col items-center justify-between py-24">
+    <main className="flex min-h-[4020px] flex-col items-center justify-between py-24">
       <div id='first-section' className="flex rounded-3xl h-[350px] w-11/12 bg-primary p-12 pb-0 justify-between">
         <div className="w-full md:w-[55%]">
           <text className="font-extrabold text-2xl sm:text-4xl md:text-5xl  h-fit">Découvrir Votre Style</text>
@@ -53,10 +80,10 @@ export default function Home() {
         </div>
         <img src="/homeImage.png" alt="Home Image" className="place-self-end rounded-t-[200px] rounded-bl-[200px] w-[40%] h-[90%] max-h-[400px] max-w-[370px] hidden md:block" />
       </div>
-      <div className="flex flex-col md:flex-row w-11/12 gap-5">
-        <div className="w-full md:w-1/5">
-           <p className="font-bold text-base sm:text-xl lg:text-2xl">Pièces les plus vendues</p>
-           <p className="font-medium text-sm sm:text-base lg:text-xl text-gray py-3">La meilleure façon de profiter de nos produits les plus populaires et d'améliorer votre quotidien</p>
+      <div className="flex flex-col md:flex-row w-11/12">
+        <div className="w-full md:w-1/4 flex flex-col justify-between h-44 mb-4 md:h-80">
+           <p className="font-bold text-xl sm:text-2xl lg:text-3xl">Pièces les plus vendues</p>
+           <p className="font-medium text-base sm:text-base lg:text-xl text-gray w-11/12">La meilleure façon de profiter de nos produits les plus populaires et d'améliorer votre quotidien</p>
            <CustomButton
                 label={"Voir plus"}
                 type="button"
@@ -64,7 +91,7 @@ export default function Home() {
                 icon={Arrow}
               />
         </div>
-        <div className="flex w-full md:w-4/5 justify-between">
+        <div className="flex w-full md:w-3/4 justify-between">
           {BestSelling.map((item)=>{
             return(
               <Card key={item.id} image={item.image} name={item.name} price={item.price}/>
@@ -72,7 +99,7 @@ export default function Home() {
           })}
         </div>
       </div>
-      <div className="flex flex-col w-11/12 items-center">
+      <div id="propos" className="flex flex-col w-11/12 items-center">
         <CustomHeader title="À propos de nous" />
         <p className="font-medium text-sm sm:text-base md:text-xl text-gray py-3">Commandez maintenant et appréciez la beauté de nos produits</p>
         <div className="flex space-x-4">
@@ -86,16 +113,16 @@ export default function Home() {
           ))}
         </div>
       </div>
-      <div className="flex flex-col w-full items-center">
+      <div id="Catégories" className="flex flex-col w-full items-center">
         <CustomHeader title="Catégories" />
         <p className="font-medium text-sm sm:text-base md:text-xl text-gray py-3">Trouvez ce que vous cherchez</p>
         <div className="flex flex-col space-y-12 w-full bg-primary p-12 items-center justify-center">
-          <div className="flex w-3/4 justify-between">
-            <div className=" space-y-4 ">
+          <div className="flex w-3/4 justify-between items-center">
+            <div className=" space-y-4 w-2/5 ">
               <img src="/Homme.png" alt="Home Image" className="rounded-xl"/>
               <p className="font-bold text-center text-sm sm:text-base md:text-lg">Homme</p>
             </div>
-            <div className=" space-y-4 ">
+            <div className=" space-y-4 w-2/5 ">
               <img src="/Femme.png" alt="Home Image" className="rounded-xl"/>
               <p className="font-bold text-center text-sm sm:text-base md:text-lg">Femme</p>
             </div>
@@ -109,7 +136,30 @@ export default function Home() {
               />
         </div>
       </div>
+      <div className="w-full flex flex-col items-center">
+        <div className="flex justify-between w-11/12">
+          <h1 className="text-xl md:text-4xl font-bold text-black w-1/2 sm:w-1/3">
+            Que disent les clients de Taxi العايلة?
+          </h1>
+          <ScrollIndicator scrollContainerRef={scrollContainerRef} itemCount={FeedbackList.length}/>          
+        </div>
+        <div 
+          ref={scrollContainerRef}
+          className="flex overflow-x-auto no-scrollbar w-full space-x-4 p-12"
+        >
+          {FeedbackList.map((item,index)=>(
+            <FeedBackCard 
+              key={index}
+              name={item.name}
+              content={item.content}
+              subTitle={item.subtitle}
+              note={item.note}
+            />
+          ))
+          }
+        </div>
 
+      </div>
       <Contact/>
     </main>
   );
