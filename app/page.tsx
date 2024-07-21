@@ -12,9 +12,9 @@ export default function Home() {
     setSearchResults([]);
   };
   const BestSelling=[
-    {id:1, image:'/exemple.png',name:'Air Force 1',price:"DT 280.00"},
-    {id:2, image:'/exemple.png',name:'Air Force 2',price:"DT 380.00"},
-    {id:3, image:'/exemple.png',name:'Air Force 3',price:"DT 580.00"}
+    {id:1, image:'/exemple.png',name:'Air Force 1',price:"DT 280.00",route:'/homme/'},
+    {id:2, image:'/exemple.png',name:'Air Force 2',price:"DT 380.00",route:'/homme/'},
+    {id:3, image:'/exemple.png',name:'Air Force 3',price:"DT 580.00",route:'/homme/'}
   ]
   const iconList = [
     {
@@ -94,7 +94,12 @@ export default function Home() {
         <div className="flex w-full md:w-3/4 justify-between">
           {BestSelling.map((item)=>{
             return(
-              <Card key={item.id} image={item.image} name={item.name} price={item.price}/>
+              <Card 
+                key={item.id} 
+                image={item.image} 
+                name={item.name} 
+                price={item.price} 
+                route={item.route+item.id}/>
             )
           })}
         </div>
