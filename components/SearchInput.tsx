@@ -1,3 +1,4 @@
+"use client";
 import { Search } from '@/public/icon';
 import React, { useState } from 'react';
 interface SearchInputProps {

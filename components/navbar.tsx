@@ -31,7 +31,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed max-w-[1500px] w-full z-50 px-9 py-4 flex h-20 transition-all duration-300 ease-in-out justify-between items-center  ${
+      className={`fixed w-full z-50 px-9 py-4 flex h-20 transition-all duration-300 ease-in-out justify-between items-center  ${
         isScrolled ? "bg-black bg-opacity-20 shadow-lg" : "bg-transparent"
       }`}
     >
@@ -55,12 +55,12 @@ export default function Navbar() {
       <div className="flex">
         <ShoppingCart
           onClick={() => console.log("pressed")}
-          className="text-light-bg cursor-pointer font-bold mr-4"
+          className="text-black cursor-pointer font-bold mr-4 "
           size={24}
         />
         <Menu
           onClick={() => setToggle(!toggle)}
-          className="cursor-pointer lg:hidden"
+          className="text-black cursor-pointer lg:hidden"
           size={24}
         />
       </div>
@@ -69,7 +69,7 @@ export default function Navbar() {
         <div className="fixed top-0 right-0 bg-primary rounded-l-xl w-fit pt-4 pb-8 lg:hidden h-fit flex flex-col items-end gap-4 text-black">
           <X
             onClick={() => setToggle(false)}
-            className="text-light-bg cursor-pointer font-bold mr-4"
+            className=" text-black cursor-pointer font-bold mr-4"
             size={24}
           />
           <div className="flex flex-col items-start justify-start gap-2 ml-10 ">
