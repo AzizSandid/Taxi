@@ -17,7 +17,7 @@ export default function Home() {
     {id:3, image:'/exemple.png',name:'Air Force 3',price:"DT 580.00",route:'/homme/'}
   ]
   const iconList = [
-    {
+    { 
       icon: Article,
       label: "Grand Assortiment",
       subTitle: "Nous proposons de nombreux types de produits différents avec de variations dans chaque catégorie."
@@ -61,19 +61,19 @@ export default function Home() {
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
 
   return (
-    <main className="flex min-h-[4020px] flex-col items-center justify-between py-24">
+    <main className="flex min-h-[4100px] flex-col items-center justify-between py-24 bg-white">
       <div id='first-section' className="flex rounded-3xl h-[350px] w-11/12 bg-primary p-12 pb-0 justify-between">
         <div className="w-full md:w-[55%]">
-          <text className="font-extrabold text-2xl sm:text-4xl md:text-5xl  h-fit">Découvrir Votre Style</text>
+          <text className="font-extrabold text-2xl sm:text-4xl md:text-5xl text-black h-fit">Découvrir Votre Style</text>
           <div className="flex my-8 justify-between w-2/3 sm:w-1/2">
             <div>
-              <p className="font-medium text-lg sm:text-xl md:text-3xl ">50+</p>
-              <p className="font-medium text-lg  md:text-xl ">Pièces</p>
+              <p className="font-medium text-lg sm:text-xl md:text-3xl text-black ">50+</p>
+              <p className="font-medium text-lg  md:text-xl text-black ">Pièces</p>
             </div>
            <div className="border border-black"/>
            <div>
-              <p className="font-medium text-lg sm:text-xl md:text-3xl ">100+</p>
-              <p className="font-medium text-llg md:text-xl ">Clients</p>
+              <p className="font-medium text-lg sm:text-xl md:text-3xl text-black ">100+</p>
+              <p className="font-medium text-llg md:text-xl text-black ">Clients</p>
             </div>
           </div>
           <SearchInput onSearch={handleSearch} />
@@ -82,7 +82,7 @@ export default function Home() {
       </div>
       <div className="flex flex-col md:flex-row w-11/12">
         <div className="w-full md:w-1/4 flex flex-col justify-between h-44 mb-4 md:h-80">
-           <p className="font-bold text-xl sm:text-2xl lg:text-3xl">Pièces les plus vendues</p>
+           <p className="font-bold text-xl sm:text-2xl lg:text-3xl text-black">Pièces les plus vendues</p>
            <p className="font-medium text-base sm:text-base lg:text-xl text-gray w-11/12">La meilleure façon de profiter de nos produits les plus populaires et d'améliorer votre quotidien</p>
            <CustomButton
                 label={"Voir plus"}
@@ -123,13 +123,13 @@ export default function Home() {
         <p className="font-medium text-sm sm:text-base md:text-xl text-gray py-3">Trouvez ce que vous cherchez</p>
         <div className="flex flex-col space-y-12 w-full bg-primary p-12 items-center justify-center">
           <div className="flex w-3/4 justify-between items-center">
-            <div className=" space-y-4 w-2/5 ">
+            <div className=" space-y-4 w-2/5 flex items-center flex-col">
               <img src="/Homme.png" alt="Home Image" className="rounded-xl"/>
-              <p className="font-bold text-center text-sm sm:text-base md:text-lg">Homme</p>
+              <p className="font-bold text-center text-sm sm:text-base md:text-lg text-black">Homme</p>
             </div>
-            <div className=" space-y-4 w-2/5 ">
+            <div className=" space-y-4 w-2/5 flex items-center flex-col ">
               <img src="/Femme.png" alt="Home Image" className="rounded-xl"/>
-              <p className="font-bold text-center text-sm sm:text-base md:text-lg">Femme</p>
+              <p className="font-bold text-center text-sm sm:text-base md:text-lg text-black">Femme</p>
             </div>
           </div>
           <CustomButton
@@ -137,7 +137,7 @@ export default function Home() {
                 type="button"
                 onclick={() => {}}
                 icon={Arrow}
-                bgColor='bg-white hover:bg-slate-200'
+                bgColor='bg-white hover:bg-slate-200 text-black'
               />
         </div>
       </div>

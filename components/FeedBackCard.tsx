@@ -16,13 +16,13 @@ export default function FeedBackCard ({name,content,subTitle,note}:CardProps){
                 <div className="flex">
                     <FeedBackIcon/> 
                     <div className="ml-2">
-                         <p className="font-bold text-sm sm:text-base md:text-lg ">{name}</p>
+                         <p className="font-bold text-sm sm:text-base md:text-lg text-black">{name}</p>
                          <p className="font-medium text-xs text-gray">{subTitle}</p>
                     </div>
                 </div>
-                <div className="flex">
+                <div className="flex items-center space-x-2">
                     <StarIcon/>
-                    <p className="font-bold text-sm sm:text-base md:text-lg ">{note}</p>
+                    <p className="font-bold text-sm sm:text-base md:text-lg text-black">{note}</p>
                 </div>
             </div>
         </div>

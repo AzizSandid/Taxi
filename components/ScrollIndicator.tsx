@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useState, MutableRefObject } from 'react';
 
 interface ScrollIndicatorProps {

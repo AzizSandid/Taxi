@@ -48,12 +48,12 @@ const contact = [
 
 const Footer = () => {
   return (
-    <footer className="w-full flex flex-col items-center justify-center bg-primary mt-12">
+    <footer className="w-full flex flex-col items-center justify-center bg-primary">
       {/* Lower Footer */}
       <div className="min-w-8/12 min-h-[40vh] w-10/12 flex flex-col lg:flex-row gap-10 lg:justify-between py-16">
         <div className="flex flex-col sm:flex-row gap-10 items-start">
           <div className="flex flex-col gap-4">
-            <p className="text-left font-bold max-w-72 ">
+            <p className="text-left font-bold max-w-72 text-black ">
               Taxi العايلة
             </p>  
             <p className="text-[#80762B] text-left font-medium max-w-72 ">
@@ -78,7 +78,7 @@ const Footer = () => {
         <div className="flex flex-col sm:flex-row gap-10 sm:gap-20 lg:gap-40 items-start">
           <div className="flex flex-col  gap-4">
             <div className="flex flex-col gap-1">
-              <h3 className="font-bold rounded-full">Acceuil</h3>
+              <h3 className="font-bold rounded-full text-black">Acceuil</h3>
               <div className="flex flex-row items-center gap-1">
                 <div className="w-8 h-1 bg-yellow-500 rounded-full" />
                 <div className="w-1 h-1 bg-yellow-500 rounded-full" />
@@ -99,7 +99,7 @@ const Footer = () => {
 
           <div className="flex flex-col items-start justify-center gap-4">
             <div className="flex flex-col gap-1">
-              <h3 className="font-bold rounded-full">Contact</h3>
+              <h3 className="font-bold rounded-full  text-black">Contact</h3>
               <div className="flex flex-row items-center gap-1">
                 <div className="w-12 h-1 bg-yellow-500 rounded-full" />
                 <div className="w-1 h-1 bg-yellow-500 rounded-full" />
