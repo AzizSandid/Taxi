@@ -9,10 +9,10 @@ type CardProps={
 }
 export default function Card ({image,name,price,route}:CardProps){
     return(
-        <Link href={route} className="w-[30%] shadow rounded-lg p-4 hover:opacity-80 min-w-[200px]">
-            <img src={image} alt="Card Image" className="w-[100%] h-[80%] max-h-[400px] max-w-[450px]" />
-            <p className="font-medium text-black text-base sm:text-xl md:text-xl py-2 ">{name}</p>
-            <p className="font-medium text-sm sm:text-base md:text-xl text-gray">{price}</p>
+        <Link href={route} className="w-[30%] shadow rounded-lg p-4 hover:opacity-80 min-w-[170px]">
+            <img src={image} alt="Card Image" className="w-[100%] h-[70%] max-h-[400px] max-w-[450px]" />
+            <p className="font-medium text-black text-base lg:text-xl py-2 ">{name}</p>
+            <p className="font-medium text-sm sm:text-base lg:text-xl text-gray">{price}</p>
         </Link>
     );
 }
