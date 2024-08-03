@@ -7,7 +7,6 @@ const StarIcon = (props: SVGProps<SVGSVGElement>) => (
     height={19}
     fill="none"
     {...props}
-    className="bg-green-600"
   >
     <path
       fill="#1E1E1E"
