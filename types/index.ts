@@ -8,6 +8,8 @@ export type detailsArticleType = {
     description: string;
     price: string;
     type: string;
-    mesuresDispo: number[];
+    mesuresDispo: string[];
     colour: Color[];
+    note:number,
+    nombreAvis:number
   };
