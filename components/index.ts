@@ -11,3 +11,4 @@ export { default as SearchInput } from './SearchInput';
 export { default as SectionTitle } from './SectionTitle';
 export { default as FeedBackCard } from './FeedBackCard';
 export { default as ScrollIndicator } from './ScrollIndicator';
+export { default as Counter } from './Counter';
