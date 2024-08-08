@@ -1,5 +1,12 @@
  
 export type Color = 'white' | 'black' | 'gray';
+export type Review = {
+  id: number;
+  reviewer: string;
+  note: number;
+  review: string;
+  date: string; // Stores the date of the review
+};
 export type detailsArticleType = {
     id: number;
     images: Record<Color, string[]>;
@@ -11,5 +18,4 @@ export type detailsArticleType = {
     mesuresDispo: string[];
     colour: Color[];
     note:number,
-    nombreAvis:number
-  };
+    avis: Review[];  };
