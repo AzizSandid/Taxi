@@ -10,9 +10,10 @@ const config: Config = {
     extend: {
       colors: {
         primary: "#FFEB57", //yellow
-        secondary: "#010101",
+        secondary: "#F1C420",//dark yellow
         teritiary: "#f7e18e",
         gray: "#808080", //
+        secondGray: "#6C7275", //
       },
     },
   },
