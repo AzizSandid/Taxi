@@ -1,7 +1,8 @@
 "use client";
+import React, { useState, useEffect } from "react";
 import Card from "@/components/Card";
 import Link from "next/link";
-import React, { useState } from "react";
+
 export default function Page() {
   const BestSelling = [
     {
@@ -10,7 +11,7 @@ export default function Page() {
       name: "Air Force 1",
       price: "DT 280.00",
       route: "/homme/",
-      marque: "Nike" ,
+      marque: "Nike",
     },
     {
       id: 2,
@@ -18,7 +19,7 @@ export default function Page() {
       name: "Air Force 2",
       price: "DT 380.00",
       route: "/homme/",
-      marque: "Nike" ,
+      marque: "Nike",
     },
     {
       id: 3,
@@ -26,7 +27,7 @@ export default function Page() {
       name: "Air Force 3",
       price: "DT 580.00",
       route: "/homme/",
-      marque: "Nike" ,
+      marque: "Nike",
     },
     {
       id: 4,
@@ -34,7 +35,7 @@ export default function Page() {
       name: "Air Force 1",
       price: "DT 280.00",
       route: "/homme/",
-      marque: "Nike" ,
+      marque: "Nike",
     },
     {
       id: 5,
@@ -42,7 +43,7 @@ export default function Page() {
       name: "Air Force 2",
       price: "DT 380.00",
       route: "/homme/",
-      marque: "Nike" ,
+      marque: "Nike",
     },
     {
       id: 6,
@@ -50,7 +51,7 @@ export default function Page() {
       name: "Air Force 3",
       price: "DT 580.00",
       route: "/homme/",
-      marque: "Nike" ,
+      marque: "Nike",
     },
     {
       id: 7,
@@ -58,7 +59,7 @@ export default function Page() {
       name: "Air Force 1",
       price: "DT 280.00",
       route: "/homme/",
-      marque: "Nike" ,
+      marque: "Nike",
     },
     {
       id: 8,
@@ -66,7 +67,7 @@ export default function Page() {
       name: "Air Force 2",
       price: "DT 380.00",
       route: "/homme/",
-      marque: "Nike" ,
+      marque: "Nike",
     },
     {
       id: 9,
@@ -74,7 +75,7 @@ export default function Page() {
       name: "Air Force 3",
       price: "DT 580.00",
       route: "/homme/",
-      marque: "Nike" ,
+      marque: "Nike",
     },
     {
       id: 10,
@@ -82,7 +83,7 @@ export default function Page() {
       name: "Air Force 1",
       price: "DT 280.00",
       route: "/homme/",
-      marque: "Nike" ,
+      marque: "Nike",
     },
     {
       id: 11,
@@ -90,7 +91,7 @@ export default function Page() {
       name: "Air Force 2",
       price: "DT 380.00",
       route: "/homme/",
-      marque: "Nike" ,
+      marque: "Nike",
     },
     {
       id: 12,
@@ -98,7 +99,7 @@ export default function Page() {
       name: "Air Force 3",
       price: "DT 580.00",
       route: "/homme/",
-      marque: "Nike" ,
+      marque: "Nike",
     },
     {
       id: 13,
@@ -106,12 +107,53 @@ export default function Page() {
       name: "Air Force 3",
       price: "DT 580.00",
       route: "/homme/",
-      marque: "Nike" ,
+      marque: "Nike",
     },
   ];
   const [visibleItems, setVisibleItems] = useState(6); // Commencez par afficher 6 articles
   const loadMore = () => {
     setVisibleItems((prevVisibleItems) => prevVisibleItems + 6); // Ajoutez 6 articles supplémentaires
+  };
+
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 770);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth < 770);
+    };
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const togglePopup = () => {
+    setIsPopupVisible(!isPopupVisible);
+  };
+  // Déclaration d'un état pour le critère de tri
+  const [sortCriteria, setSortCriteria] = useState("");
+  interface Item {
+    image: string;
+    name: string;
+    price: string; // Si price est une chaîne de caractères
+    pointure?: number;
+    route: string;
+    id: number; // Modification de string à number
+    marque?: string; // Ajouter la propriété marque si nécessaire
+  }
+  
+  // Fonction de tri
+  const sortItems = (items: Item[], criteria: string): Item[] => {
+    switch (criteria) {
+      case 'price':
+        return items.sort((a, b) => Number(a.price) - Number(b.price)); // Conversion en nombre
+      case 'pointure':
+        return items.sort((a, b) => (Number(a.pointure) ?? 0) - (Number(b.pointure) ?? 0)); // Conversion en nombre
+      default:
+        return items;
+    }
   };
   return (
     <div className="flex flex-col  min-h-screen items-center py-24 bg-white ">
@@ -130,45 +172,138 @@ export default function Page() {
         </div>
       </div>
 
-      <div className="flex w-11/12 pt-20">
-        <div className="w-1/5 p-2">
-          <p className="font-bold text-base text-black sm:text-xl md:text-2xl">
-            <span></span>Filtre
-          </p>
-          <div className="py-8">
-          <text className="font-bold  text-sm sm:text-base md:text-sm text-black ">
-            Marque
-          </text><br />
-          <text className=" sm:text-base md:text-sm text-black py-3">
-            Adidas
-          </text><br />
-          <text className=" sm:text-base md:text-sm text-black py-3">
-          Nike
-          </text><br />
-          <text className=" sm:text-base md:text-sm text-black py-3">
-          Puma
-          </text><br />
-          <text className=" sm:text-base md:text-sm text-black py-3">
-          New Balance
-          </text><br />
-          <text className="sm:text-base md:text-sm text-black py-3">
-          Air Jordan 1
-          </text><br />
-          <text className=" sm:text-base md:text-sm text-black py-3">
-          Jordan
-          </text>
-          <text className=" sm:text-base md:text-sm text-black py-3">
-          McQueen
-          </text>
-          </div>
+      <div className="flex flex-col md:flex-row w-11/12 pt-20">
+        <div className="sm:w-1/5 md:w-1/4  p-2">
+          {isSmallScreen ? (
+            <button
+              onClick={togglePopup}
+              className="p-2 bg-white  hover:bg-slate-200 text-black border border-black-2 rounded-md"
+            >
+              Filter
+            </button>
+          ) : (
+            <div className="  ">
+              <p className="font-bold text-base text-black sm:text-xl md:text-2xl">
+                Filtre
+              </p>
+              <div className="py-8">
+                <text className="font-bold text-sm sm:text-base md:text-sm text-black">
+                  Marque
+                </text>
+                <br />
+                <button className="sm:text-base md:text-sm hover:text-gray text-black py-2 ">
+                  Adidas
+                </button>
+                <br />
+                <button className="sm:text-base md:text-sm  hover:text-gray text-black py-2">
+                  Nike
+                </button>
+                <br />
+                <button className="sm:text-base md:text-sm  hover:text-gray text-black py-2">
+                  Puma
+                </button>
+                <br />
+                <button className="sm:text-base md:text-sm  hover:text-gray text-black py-2">
+                  New Balance
+                </button>
+                <br />
+                <button className="sm:text-base md:text-sm  hover:text-gray text-black py-2">
+                  Air Jordan 1
+                </button>
+                <br />
+                <button className="sm:text-base md:text-sm  hover:text-gray text-black py-2">
+                  Jordan
+                </button>
+                <br />
+                <button className="sm:text-base md:text-sm  hover:text-gray text-black py-2 ">
+                  McQueen
+                </button>
+              </div>
+            </div>
+          )}
+
+          {isPopupVisible && (
+            <div className="fixed inset-0 bg-black  md:w-2/5 p-2 bg-opacity-50 flex justify-center items-center">
+              <div className="bg-white p-4 rounded-md w-11/12 sm:w-1/2">
+                <button
+                  onClick={togglePopup}
+                  className="float-right p-1 bg-red-700  hover:bg-red-500 text-white rounded-md"
+                >
+                  Close
+                </button>
+                <p className="font-bold text-base text-black sm:text-xl md:text-2xl">
+                  Filtre
+                </p>
+                <div className="py-8">
+                  <text className="font-bold text-sm sm:text-base md:text-sm text-black">
+                    Marque
+                  </text>
+                  <br />
+                  <button
+                    className="sm:text-base md:text-sm hover:text-gray text-black py-2 "
+                    onClick={togglePopup}
+                  >
+                    Adidas
+                  </button>
+                  <br />
+                  <button
+                    className="sm:text-base md:text-sm  hover:text-gray text-black py-2"
+                    onClick={togglePopup}
+                  >
+                    Nike
+                  </button>
+                  <br />
+                  <button
+                    className="sm:text-base md:text-sm  hover:text-gray text-black py-2"
+                    onClick={togglePopup}
+                  >
+                    Puma
+                  </button>
+                  <br />
+                  <button
+                    className="sm:text-base md:text-sm  hover:text-gray text-black py-2"
+                    onClick={togglePopup}
+                  >
+                    New Balance
+                  </button>
+                  <br />
+                  <button
+                    className="sm:text-base md:text-sm  hover:text-gray text-black py-2"
+                    onClick={togglePopup}
+                  >
+                    Air Jordan 1
+                  </button>
+                  <br />
+                  <button
+                    className="sm:text-base md:text-sm  hover:text-gray text-black py-2"
+                    onClick={togglePopup}
+                  >
+                    Jordan
+                  </button>
+                  <br />
+                  <button
+                    className="sm:text-base md:text-sm  hover:text-gray text-black py-2 "
+                    onClick={togglePopup}
+                  >
+                    McQueen
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
-        <div className="w-4/5 p-2">
+        <div className="sm:w-4/5 md:w-5/5 p-2 ">
           <div className="flex items-center mb-6 sm:mb-2 w-full justify-between">
             <text className="text-xl font-bold text-black">NIKE</text>
             <div className="flex">
-              <select name="drop1" id="Select1" className="text-black">
-                <option value="trier par ">trier par</option>
-                <option value="marque">marque</option>
+              <select
+                name="drop1"
+                id="Select1"
+                className="text-black"
+                onChange={(e) => setSortCriteria(e.target.value)}
+              >
+                <option value="">trier par</option>
+                <option value="price">prix</option>
                 <option value="pointure">pointure</option>
               </select>
               <div className="flex text-3xl font-bold text-black ml-[40px] ">
@@ -230,24 +365,29 @@ export default function Page() {
               </div>
             </div>
           </div>
-          <div className="flex flex-wrap justify-evenly w-full gap-4">
-            {BestSelling.slice(0, visibleItems).map((item, index) => (
-              <Card
-                key={index}
-                image={item.image}
-                name={item.name}
-                price={item.price}
-                route={item.route + item.id}
-              />
-            ))}
-            {visibleItems < BestSelling.length && (
-              <button
-                className="bg-white hover:bg-slate-200 text-black border border-black-200 font-bold py-2 px-4 rounded-full"
-                onClick={loadMore}
-              >
-                voir plus
-              </button>
+          <div className="flex flex-wrap justify-center gap-4 w-full  md:justify-center">
+            {sortItems(BestSelling.slice(0, visibleItems), sortCriteria).map(
+              (item, index) => (
+                <Card
+                  key={index}
+                  image={item.image}
+                  name={item.name}
+                  price={item.price}
+                  route={item.route + item.id}
+                />
+              )
             )}
+            <br />
+            <div className="  px-3">
+              {visibleItems < BestSelling.length && (
+                <button
+                  className="bg-white hover:bg-slate-200 text-black border border-black-200 font-bold py-2 px-4 rounded-full "
+                  onClick={loadMore}
+                >
+                  voir plus
+                </button>
+              )}
+            </div>
           </div>
         </div>
       </div>
