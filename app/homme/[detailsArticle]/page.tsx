@@ -35,7 +35,7 @@ export default function HomePage() {
     <div className="flex flex-col items-center py-24 bg-white">
       <div className="flex w-11/12 my-4 gap-4">
           <Link href='/' className="text-gray ">Acceuil &gt; </Link>
-          <Link href='/' className="text-gray ">Hommes &gt; </Link> 
+          <Link href='/homme' className="text-gray ">Hommes &gt; </Link> 
           <text className="text-black "> {detailsArticle.marque}</text>  
       </div>
       <div className="product-detail flex w-11/12 justify-between">
@@ -87,7 +87,7 @@ export default function HomePage() {
               </button>
             ))}
           </div>
-          <button className="add-to-cart bg-yellow-500 text-white py-3 px-6 text-black">
+          <button className="add-to-cart bg-yellow-50  py-3 px-6 text-black">
             Add to Cart
           </button>
         </div>
